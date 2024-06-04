@@ -1,0 +1,37 @@
+{
+  "name": "budio",
+  "version": "1.0.0",
+  "description": "Your best bud for your fitness goals",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "prepare": "husky",
+    "commit": "git-cz",
+    "commit:all": "git add -A && git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jralvarenga/budio.git"
+  },
+  "keywords": [
+    "fitness",
+    "calories",
+    "tracker"
+  ],
+  "author": "Rigo Alvarenga <jralvarenga161@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jralvarenga/budio/issues"
+  },
+  "homepage": "https://github.com/jralvarenga/budio#readme",
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.0.11"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
