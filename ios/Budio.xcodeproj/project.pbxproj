@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFB0BB502C0FA7CE0056FBF6 /* BudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB4F2C0FA7CE0056FBF6 /* BudioApp.swift */; };
+		FFB0BB522C0FA7CE0056FBF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB512C0FA7CE0056FBF6 /* ContentView.swift */; };
+		FFB0BB542C0FA7CE0056FBF6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB532C0FA7CE0056FBF6 /* Item.swift */; };
+		FFB0BB562C0FA7CF0056FBF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB0BB552C0FA7CF0056FBF6 /* Assets.xcassets */; };
+		FFB0BB592C0FA7CF0056FBF6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB0BB582C0FA7CF0056FBF6 /* Preview Assets.xcassets */; };
+		FFB0BB632C0FA7CF0056FBF6 /* BudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB622C0FA7CF0056FBF6 /* BudioTests.swift */; };
+		FFB0BB6D2C0FA7CF0056FBF6 /* BudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB6C2C0FA7CF0056FBF6 /* BudioUITests.swift */; };
+		FFB0BB6F2C0FA7CF0056FBF6 /* BudioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB6E2C0FA7CF0056FBF6 /* BudioUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFB0BB5F2C0FA7CF0056FBF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFB0BB442C0FA7CE0056FBF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFB0BB4B2C0FA7CE0056FBF6;
+			remoteInfo = Budio;
+		};
+		FFB0BB692C0FA7CF0056FBF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFB0BB442C0FA7CE0056FBF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFB0BB4B2C0FA7CE0056FBF6;
+			remoteInfo = Budio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FFB0BB4C2C0FA7CE0056FBF6 /* Budio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB0BB4F2C0FA7CE0056FBF6 /* BudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudioApp.swift; sourceTree = "<group>"; };
+		FFB0BB512C0FA7CE0056FBF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FFB0BB532C0FA7CE0056FBF6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		FFB0BB552C0FA7CF0056FBF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFB0BB582C0FA7CF0056FBF6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFB0BB5E2C0FA7CF0056FBF6 /* BudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB0BB622C0FA7CF0056FBF6 /* BudioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudioTests.swift; sourceTree = "<group>"; };
+		FFB0BB682C0FA7CF0056FBF6 /* BudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB0BB6C2C0FA7CF0056FBF6 /* BudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudioUITests.swift; sourceTree = "<group>"; };
+		FFB0BB6E2C0FA7CF0056FBF6 /* BudioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFB0BB492C0FA7CE0056FBF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB0BB5B2C0FA7CF0056FBF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB0BB652C0FA7CF0056FBF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFB0BB432C0FA7CE0056FBF6 = {
+			isa = PBXGroup;
+			children = (
+				FFB0BB4E2C0FA7CE0056FBF6 /* Budio */,
+				FFB0BB612C0FA7CF0056FBF6 /* BudioTests */,
+				FFB0BB6B2C0FA7CF0056FBF6 /* BudioUITests */,
+				FFB0BB4D2C0FA7CE0056FBF6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFB0BB4D2C0FA7CE0056FBF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0BB4C2C0FA7CE0056FBF6 /* Budio.app */,
+				FFB0BB5E2C0FA7CF0056FBF6 /* BudioTests.xctest */,
+				FFB0BB682C0FA7CF0056FBF6 /* BudioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFB0BB4E2C0FA7CE0056FBF6 /* Budio */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0BB4F2C0FA7CE0056FBF6 /* BudioApp.swift */,
+				FFB0BB512C0FA7CE0056FBF6 /* ContentView.swift */,
+				FFB0BB532C0FA7CE0056FBF6 /* Item.swift */,
+				FFB0BB552C0FA7CF0056FBF6 /* Assets.xcassets */,
+				FFB0BB572C0FA7CF0056FBF6 /* Preview Content */,
+			);
+			path = Budio;
+			sourceTree = "<group>";
+		};
+		FFB0BB572C0FA7CF0056FBF6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0BB582C0FA7CF0056FBF6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FFB0BB612C0FA7CF0056FBF6 /* BudioTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0BB622C0FA7CF0056FBF6 /* BudioTests.swift */,
+			);
+			path = BudioTests;
+			sourceTree = "<group>";
+		};
+		FFB0BB6B2C0FA7CF0056FBF6 /* BudioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0BB6C2C0FA7CF0056FBF6 /* BudioUITests.swift */,
+				FFB0BB6E2C0FA7CF0056FBF6 /* BudioUITestsLaunchTests.swift */,
+			);
+			path = BudioUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFB0BB4B2C0FA7CE0056FBF6 /* Budio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB0BB722C0FA7CF0056FBF6 /* Build configuration list for PBXNativeTarget "Budio" */;
+			buildPhases = (
+				FFB0BB482C0FA7CE0056FBF6 /* Sources */,
+				FFB0BB492C0FA7CE0056FBF6 /* Frameworks */,
+				FFB0BB4A2C0FA7CE0056FBF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Budio;
+			productName = Budio;
+			productReference = FFB0BB4C2C0FA7CE0056FBF6 /* Budio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFB0BB5D2C0FA7CF0056FBF6 /* BudioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB0BB752C0FA7CF0056FBF6 /* Build configuration list for PBXNativeTarget "BudioTests" */;
+			buildPhases = (
+				FFB0BB5A2C0FA7CF0056FBF6 /* Sources */,
+				FFB0BB5B2C0FA7CF0056FBF6 /* Frameworks */,
+				FFB0BB5C2C0FA7CF0056FBF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFB0BB602C0FA7CF0056FBF6 /* PBXTargetDependency */,
+			);
+			name = BudioTests;
+			productName = BudioTests;
+			productReference = FFB0BB5E2C0FA7CF0056FBF6 /* BudioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FFB0BB672C0FA7CF0056FBF6 /* BudioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB0BB782C0FA7CF0056FBF6 /* Build configuration list for PBXNativeTarget "BudioUITests" */;
+			buildPhases = (
+				FFB0BB642C0FA7CF0056FBF6 /* Sources */,
+				FFB0BB652C0FA7CF0056FBF6 /* Frameworks */,
+				FFB0BB662C0FA7CF0056FBF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFB0BB6A2C0FA7CF0056FBF6 /* PBXTargetDependency */,
+			);
+			name = BudioUITests;
+			productName = BudioUITests;
+			productReference = FFB0BB682C0FA7CF0056FBF6 /* BudioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFB0BB442C0FA7CE0056FBF6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					FFB0BB4B2C0FA7CE0056FBF6 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					FFB0BB5D2C0FA7CF0056FBF6 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FFB0BB4B2C0FA7CE0056FBF6;
+					};
+					FFB0BB672C0FA7CF0056FBF6 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FFB0BB4B2C0FA7CE0056FBF6;
+					};
+				};
+			};
+			buildConfigurationList = FFB0BB472C0FA7CE0056FBF6 /* Build configuration list for PBXProject "Budio" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFB0BB432C0FA7CE0056FBF6;
+			productRefGroup = FFB0BB4D2C0FA7CE0056FBF6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFB0BB4B2C0FA7CE0056FBF6 /* Budio */,
+				FFB0BB5D2C0FA7CF0056FBF6 /* BudioTests */,
+				FFB0BB672C0FA7CF0056FBF6 /* BudioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFB0BB4A2C0FA7CE0056FBF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB0BB592C0FA7CF0056FBF6 /* Preview Assets.xcassets in Resources */,
+				FFB0BB562C0FA7CF0056FBF6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB0BB5C2C0FA7CF0056FBF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB0BB662C0FA7CF0056FBF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFB0BB482C0FA7CE0056FBF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB0BB522C0FA7CE0056FBF6 /* ContentView.swift in Sources */,
+				FFB0BB542C0FA7CE0056FBF6 /* Item.swift in Sources */,
+				FFB0BB502C0FA7CE0056FBF6 /* BudioApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB0BB5A2C0FA7CF0056FBF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB0BB632C0FA7CF0056FBF6 /* BudioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB0BB642C0FA7CF0056FBF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB0BB6F2C0FA7CF0056FBF6 /* BudioUITestsLaunchTests.swift in Sources */,
+				FFB0BB6D2C0FA7CF0056FBF6 /* BudioUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFB0BB602C0FA7CF0056FBF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFB0BB4B2C0FA7CE0056FBF6 /* Budio */;
+			targetProxy = FFB0BB5F2C0FA7CF0056FBF6 /* PBXContainerItemProxy */;
+		};
+		FFB0BB6A2C0FA7CF0056FBF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFB0BB4B2C0FA7CE0056FBF6 /* Budio */;
+			targetProxy = FFB0BB692C0FA7CF0056FBF6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FFB0BB702C0FA7CF0056FBF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFB0BB712C0FA7CF0056FBF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFB0BB732C0FA7CF0056FBF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Budio/Preview Content\"";
+				DEVELOPMENT_TEAM = 272VHA29FK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Budio;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jralvarenga.Budio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFB0BB742C0FA7CF0056FBF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Budio/Preview Content\"";
+				DEVELOPMENT_TEAM = 272VHA29FK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Budio;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jralvarenga.Budio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FFB0BB762C0FA7CF0056FBF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jralvarenga.BudioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Budio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Budio";
+			};
+			name = Debug;
+		};
+		FFB0BB772C0FA7CF0056FBF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jralvarenga.BudioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Budio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Budio";
+			};
+			name = Release;
+		};
+		FFB0BB792C0FA7CF0056FBF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jralvarenga.BudioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Budio;
+			};
+			name = Debug;
+		};
+		FFB0BB7A2C0FA7CF0056FBF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jralvarenga.BudioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Budio;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFB0BB472C0FA7CE0056FBF6 /* Build configuration list for PBXProject "Budio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB0BB702C0FA7CF0056FBF6 /* Debug */,
+				FFB0BB712C0FA7CF0056FBF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFB0BB722C0FA7CF0056FBF6 /* Build configuration list for PBXNativeTarget "Budio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB0BB732C0FA7CF0056FBF6 /* Debug */,
+				FFB0BB742C0FA7CF0056FBF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFB0BB752C0FA7CF0056FBF6 /* Build configuration list for PBXNativeTarget "BudioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB0BB762C0FA7CF0056FBF6 /* Debug */,
+				FFB0BB772C0FA7CF0056FBF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFB0BB782C0FA7CF0056FBF6 /* Build configuration list for PBXNativeTarget "BudioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB0BB792C0FA7CF0056FBF6 /* Debug */,
+				FFB0BB7A2C0FA7CF0056FBF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFB0BB442C0FA7CE0056FBF6 /* Project object */;
+}
