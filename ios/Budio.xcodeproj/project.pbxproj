@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF68C6CA2C0FCBEA00703D43 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68C6C92C0FCBEA00703D43 /* Home.swift */; };
 		FFB0BB502C0FA7CE0056FBF6 /* BudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB4F2C0FA7CE0056FBF6 /* BudioApp.swift */; };
 		FFB0BB522C0FA7CE0056FBF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB512C0FA7CE0056FBF6 /* ContentView.swift */; };
 		FFB0BB542C0FA7CE0056FBF6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB532C0FA7CE0056FBF6 /* Item.swift */; };
@@ -15,6 +16,11 @@
 		FFB0BB632C0FA7CF0056FBF6 /* BudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB622C0FA7CF0056FBF6 /* BudioTests.swift */; };
 		FFB0BB6D2C0FA7CF0056FBF6 /* BudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB6C2C0FA7CF0056FBF6 /* BudioUITests.swift */; };
 		FFB0BB6F2C0FA7CF0056FBF6 /* BudioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0BB6E2C0FA7CF0056FBF6 /* BudioUITestsLaunchTests.swift */; };
+		FFF416672C1016B800FCB91E /* BottomTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF416662C1016B800FCB91E /* BottomTab.swift */; };
+		FFF416692C10180F00FCB91E /* MealsNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF416682C10180F00FCB91E /* MealsNavigation.swift */; };
+		FFF4166B2C101AD100FCB91E /* DatesNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF4166A2C101AD100FCB91E /* DatesNavigation.swift */; };
+		FFF4166F2C101C5B00FCB91E /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF4166E2C101C5B00FCB91E /* Meal.swift */; };
+		FFF416722C101F2500FCB91E /* CurrentMealByTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF416712C101F2500FCB91E /* CurrentMealByTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF68C6C92C0FCBEA00703D43 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		FFB0BB4C2C0FA7CE0056FBF6 /* Budio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB0BB4F2C0FA7CE0056FBF6 /* BudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudioApp.swift; sourceTree = "<group>"; };
 		FFB0BB512C0FA7CE0056FBF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +53,11 @@
 		FFB0BB682C0FA7CF0056FBF6 /* BudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB0BB6C2C0FA7CF0056FBF6 /* BudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudioUITests.swift; sourceTree = "<group>"; };
 		FFB0BB6E2C0FA7CF0056FBF6 /* BudioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FFF416662C1016B800FCB91E /* BottomTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTab.swift; sourceTree = "<group>"; };
+		FFF416682C10180F00FCB91E /* MealsNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsNavigation.swift; sourceTree = "<group>"; };
+		FFF4166A2C101AD100FCB91E /* DatesNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesNavigation.swift; sourceTree = "<group>"; };
+		FFF4166E2C101C5B00FCB91E /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		FFF416712C101F2500FCB91E /* CurrentMealByTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMealByTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF68C6C82C0FCBD400703D43 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				FF68C6C92C0FCBEA00703D43 /* Home.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
 		FFB0BB432C0FA7CE0056FBF6 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +116,10 @@
 		FFB0BB4E2C0FA7CE0056FBF6 /* Budio */ = {
 			isa = PBXGroup;
 			children = (
+				FFF416702C101F0F00FCB91E /* Helpers */,
+				FFF4166C2C101C3F00FCB91E /* Structs */,
+				FFF416652C1016A000FCB91E /* Views */,
+				FF68C6C82C0FCBD400703D43 /* Pages */,
 				FFB0BB4F2C0FA7CE0056FBF6 /* BudioApp.swift */,
 				FFB0BB512C0FA7CE0056FBF6 /* ContentView.swift */,
 				FFB0BB532C0FA7CE0056FBF6 /* Item.swift */,
@@ -128,6 +152,32 @@
 				FFB0BB6E2C0FA7CF0056FBF6 /* BudioUITestsLaunchTests.swift */,
 			);
 			path = BudioUITests;
+			sourceTree = "<group>";
+		};
+		FFF416652C1016A000FCB91E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFF416662C1016B800FCB91E /* BottomTab.swift */,
+				FFF416682C10180F00FCB91E /* MealsNavigation.swift */,
+				FFF4166A2C101AD100FCB91E /* DatesNavigation.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FFF4166C2C101C3F00FCB91E /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				FFF4166E2C101C5B00FCB91E /* Meal.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		FFF416702C101F0F00FCB91E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FFF416712C101F2500FCB91E /* CurrentMealByTime.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +312,13 @@
 			files = (
 				FFB0BB522C0FA7CE0056FBF6 /* ContentView.swift in Sources */,
 				FFB0BB542C0FA7CE0056FBF6 /* Item.swift in Sources */,
+				FFF416692C10180F00FCB91E /* MealsNavigation.swift in Sources */,
+				FFF416722C101F2500FCB91E /* CurrentMealByTime.swift in Sources */,
+				FFF416672C1016B800FCB91E /* BottomTab.swift in Sources */,
+				FFF4166F2C101C5B00FCB91E /* Meal.swift in Sources */,
 				FFB0BB502C0FA7CE0056FBF6 /* BudioApp.swift in Sources */,
+				FFF4166B2C101AD100FCB91E /* DatesNavigation.swift in Sources */,
+				FF68C6CA2C0FCBEA00703D43 /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
