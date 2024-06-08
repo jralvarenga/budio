@@ -41,7 +41,6 @@ struct MealsNavigationPreview: View {
     private let meals: [Meal] = MealsExample().meals
     
     var body: some View {
-        
         MealsNavigation(currentMeal: $filter, meals: meals)
     }
 }

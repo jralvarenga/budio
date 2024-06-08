@@ -10,35 +10,31 @@ import SwiftData
 
 struct Home: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
     
     private let meals: [Meal] = MealsExample().meals
     
     @State private var currentMeal: String = CurrentMealByTime(meals: MealsExample().meals).getByTime()
+    @State private var carbs: Int = 235
+    @State private var protein: Int = 100
+    @State private var fat: Int = 50
+    @State var showAddFood: Bool = false
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 15) {
                 DatesNavigation()
+                DailyMacros(carbs: $carbs, protein: $protein, fat: $fat)
                 MealsNavigation(currentMeal: $currentMeal, meals: meals)
-                Text("Carbs, protein, fat here")
-                ScrollView {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                        } label: {
-                            Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                        }
-                    }
-                    .onDelete(perform: deleteItems)
-                }
+                FoodsInMeal()
             }
             .navigationTitle("Nutrition")
             .toolbar {
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+                    Button(action: {self.showAddFood = true}) {
+                        Label("Add food", systemImage: "plus")
+                    }.sheet(isPresented: $showAddFood, content: {
+                        AddFood(currentMealId: $currentMeal)
+                    })
                 }
             }
         }
@@ -48,14 +44,6 @@ struct Home: View {
         withAnimation {
             let newItem = Item(timestamp: Date())
             modelContext.insert(newItem)
-        }
-    }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
         }
     }
 }
