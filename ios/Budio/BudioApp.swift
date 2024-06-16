@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct BudioApp: App {
+    @UIApplicationDelegateAdaptor(FirebaseAppDelegate.self) var delegate
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
