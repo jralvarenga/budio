@@ -1,9 +1,10 @@
 "use client"
 
 import { useTransactions } from "@/hooks/useTransactions"
-import { ChevronDown, ChevronUp, Navigation, Trash } from "lucide-react"
+import { ChevronDown, ChevronUp, IterationCcw, Navigation, Trash } from "lucide-react"
 import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
+import dayjs from "dayjs"
 
 export function TransactionInfo() {
   const [transactions, setTransactions] = useTransactions()
@@ -66,13 +67,20 @@ export function TransactionInfo() {
           <h4 className="text-2xl font-bold">
             ${transaction?.amount.toFixed(2)}
           </h4>
-          <h6>{transaction?.title}</h6>
+          <div className="flex gap-1 items-center">
+            {transaction?.recurrent && (
+              <div className="w-5 h-5 flex items-center justify-center border rounded-md border-muted">
+                <IterationCcw size={10} />
+              </div>
+            )}
+            <h6>{transaction?.title}</h6>
+          </div>
           <button className="mt-3 flex items-center gap-1 text-sm hover:underline">
             <Navigation className="-scale-x-[1] transform" size={15} />
             <span>See location, direccion</span>
           </button>
         </div>
-        <div>date</div>
+        <div>{dayjs(transaction?.timestamp).format('DD MMMM, YYYY')}</div>
       </div>
 
       <div className="flex flex-wrap gap-2 p-4">
