@@ -14,6 +14,8 @@ export function AccountInfo() {
   const [accounts, setAccounts] = useAccounts()
   const [transactions, setTransactions] = useTransactions()
   const { selected: account, selectedIndex } = accounts
+
+  // fetch them instead of filtering
   const accountTransactions = transactions.list.filter((val) => val.account_id === account?.id)
 
   function goAccountUp() {
