@@ -1,4 +1,4 @@
-import { User } from "firebase/auth"
+import { User } from "@supabase/supabase-js"
 import { atom, useAtom } from "jotai"
 
 type Config = User | null

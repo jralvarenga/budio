@@ -1,21 +1,7 @@
-"use client"
-
-import { signInWithGoogle } from "@/firebase/auth"
+import { loginWithProvider } from "@/actions/login"
 import { Button } from "./ui/button"
-import { useRouter } from "next/navigation"
 
 export function LoginWith() {
-  const router = useRouter()
-
-  async function handleGoogleLogin() {
-    try {
-      await signInWithGoogle()
-      router.push("/")
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
   return (
     <>
       <div className="relative">
@@ -29,9 +15,14 @@ export function LoginWith() {
         </div>
       </div>
 
-      <Button onClick={handleGoogleLogin} variant="outline" type="button">
-        Google
-      </Button>
+      <form action={async () => {
+        'use server'
+        await loginWithProvider('google')
+      }} className="w-full">
+        <Button variant="outline" type="submit" className="w-full">
+          Google
+        </Button>
+      </form>
     </>
   )
 }

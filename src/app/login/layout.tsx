@@ -1,5 +1,5 @@
 import { LoginWith } from "@/components/loginWith"
-import { getAuthenticatedAppForUser } from "@/firebase/serverApp"
+import { createClient } from "@/supabase/server"
 import Link from "next/link"
 import { redirect } from "next/navigation"
 
@@ -8,9 +8,10 @@ export default async function LoginLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const { currentUser } = await getAuthenticatedAppForUser()
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
 
-  if (currentUser) {
+  if (user) {
     return redirect("/")
   }
 

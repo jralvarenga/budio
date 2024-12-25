@@ -1,8 +1,7 @@
 "use client"
 
 import { useAuth } from "@/hooks/useAuth"
-import { useUserSession } from "@/hooks/useUserSession"
-import { User } from "firebase/auth"
+import { User } from "@supabase/supabase-js"
 import { useEffect } from "react"
 
 export function AuthWrapper({
@@ -14,13 +13,12 @@ export function AuthWrapper({
 }>) {
   // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const [_, setUser] = useAuth()
-  const user = useUserSession(currentUser)
 
   useEffect(() => {
-    if (user) {
-      setUser(user)
+    if (currentUser) {
+      setUser(currentUser)
     }
-  }, [user, setUser])
+  }, [currentUser])
 
   return children
 }

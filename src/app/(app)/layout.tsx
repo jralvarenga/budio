@@ -1,26 +1,26 @@
-import { AuthWrapper } from "@/providers/authWrapper"
-import { getAuthenticatedAppForUser } from "@/firebase/serverApp"
-import { redirect } from "next/navigation"
-import { User } from "firebase/auth"
 import { AppSidebar } from "@/components/appSidebar"
 import { NewTransaction } from "@/components/transaction/newTransaction"
 import { Button } from "@/components/ui/button"
+import { AuthWrapper } from "@/providers/authWrapper"
 import { Providers } from "@/providers/providers"
+import { createClient } from "@/supabase/server"
+import { redirect } from "next/navigation"
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const { currentUser } = await getAuthenticatedAppForUser()
+  const supabase = await createClient()
+  const { data: { user }, error } = await supabase.auth.getUser()
 
-  if (!currentUser) {
+  if (!user || error) {
     return redirect("/login")
   }
 
   return (
     <Providers>
-      <AuthWrapper currentUser={currentUser?.toJSON() as User | null}>
+      <AuthWrapper currentUser={user}>
         <AppSidebar />
         <div className="flex-1 space-y-4">{children}</div>
 
