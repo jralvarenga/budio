@@ -12,7 +12,7 @@ export default function BudgetLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div>
+    <div className="p-4">
       <Header title="Budget" />
 
       <div className="mt-5 flex gap-5">
