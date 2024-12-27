@@ -17,8 +17,9 @@ datasource db {
 model Account {
   id        Int      @id @default(autoincrement())
   created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  updated_at DateTime? @updatedAt 
   title      String
+  digits Int
   user_id    String
   balance   Float
   limit Float?

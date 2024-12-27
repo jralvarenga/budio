@@ -27,7 +27,7 @@ export function AccountPreview({ account, index }: Props) {
     >
       <div className="flex w-full flex-col gap-1">
         <div className="accounts-center flex">
-          <div className="font-semibold">{account.name}</div>
+          <div className="font-semibold">{account.title}</div>
           <div
             className={cn(
               "ml-auto font-bold",
@@ -36,7 +36,13 @@ export function AccountPreview({ account, index }: Props) {
                 : "text-muted-foreground",
             )}
           >
-            ${account.amount.toFixed(2)}
+            ${account.balance.toFixed(2)}
+            {account.limit && (
+              <span>
+                {" "}
+                / ${account.limit.toFixed(2)}
+              </span>
+            )}
           </div>
         </div>
       </div>

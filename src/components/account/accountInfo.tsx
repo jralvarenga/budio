@@ -8,6 +8,7 @@ import { useTransactions } from "@/hooks/useTransactions"
 import { TransactionRow } from "../transaction/transactionRow"
 import { Transaction } from "budio"
 import { useRouter } from "next/navigation"
+import { NewAccount } from "./newAccount"
 
 export function AccountInfo() {
   const router = useRouter()
@@ -17,6 +18,23 @@ export function AccountInfo() {
 
   // fetch them instead of filtering
   const accountTransactions = transactions.list.filter((val) => val.account_id === account?.id)
+
+
+  if (accounts.list.length === 0) {
+    return (
+      <div className="w-full h-full flex gap-2 flex-col items-center justify-center">
+        <h1 className="font-bold">No accounts</h1>
+        <p className="text-muted-foreground">You don&apos;t have any accounts yet.</p>
+        <NewAccount
+          trigger={
+            <Button>
+              Create New Account
+            </Button>
+          }
+        />
+      </div>
+    )
+  }
 
   function goAccountUp() {
     setAccounts({
@@ -83,10 +101,15 @@ export function AccountInfo() {
       <div className="flex items-start justify-between border-b border-muted p-4 pb-3 mb-3">
         <div>
           <h4 className="text-2xl font-bold">
-            ${account?.amount.toFixed(2)}
+            ${account?.balance.toFixed(2)}
+            {account?.limit && (
+              <span className="text-muted-foreground text-xs">
+                {" "}/ ${account?.limit.toFixed(2)}
+              </span>
+            )}
           </h4>
           <div className="flex gap-1 items-center">
-            <h6>{account?.name}</h6>
+            <h6>{account?.title}</h6>
           </div>
         </div>
         <Badge className="capitalize font-bold">{account?.type.replaceAll('_', ' ')}</Badge>

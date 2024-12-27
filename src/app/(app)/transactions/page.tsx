@@ -14,7 +14,7 @@ export default async function TransactionsPage() {
   return (
     <div className="flex">
       <div className="flex flex-1 flex-col gap-3 ">
-        <div className="p-4">
+        <div className="pt-4 px-4">
           <Header title="Transactions" />
         </div>
 

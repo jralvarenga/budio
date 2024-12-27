@@ -23,9 +23,9 @@ declare module "budio" {
 
   export type Account = {
     id: string
-    name: string
+    title: string
     digits: number
-    amount: number
+    balance: number
     type: AccountType
     limit?: number
     notes?: string

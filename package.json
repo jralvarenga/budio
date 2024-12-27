@@ -12,7 +12,6 @@
     "format:check": "prettier . --check",
     "commit": "git-cz",
     "commit:all": "git add -A && git-cz",
-
     "prisma:migrate": "prisma migrate dev"
   },
   "dependencies": {
@@ -38,10 +37,11 @@
     "jotai": "^2.11.0",
     "lucide-react": "^0.460.0",
     "next": "15.0.3",
-    "next-themes": "^0.4.3",
+    "next-themes": "^0.4.4",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
+    "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.1"
@@ -59,10 +59,10 @@
     "globals": "^15.13.0",
     "postcss": "^8",
     "prettier": "3.4.2",
+    "prisma": "^6.1.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
-    "typescript-eslint": "^8.18.0",
-    "prisma": "^6.1.0"
+    "typescript-eslint": "^8.18.0"
   },
   "config": {
     "commitizen": {

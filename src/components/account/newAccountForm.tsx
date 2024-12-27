@@ -1,38 +1,67 @@
 "use client"
 
-import { FormEvent, useState } from "react"
+import { FormEvent, useState, useTransition } from "react"
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
 import { Textarea } from "../ui/textarea"
-import { Account } from "budio"
+import { Account, AccountType } from "budio"
 import { Checkbox } from "../ui/checkbox"
 import { Download } from "lucide-react"
+import { toast } from "sonner"
+import { createAccount } from "@/actions/accounts"
+import { Spinner } from "../spinner"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"
+import { useAccounts } from "@/hooks/useAccounts"
 
 export function NewAccountForm() {
+  const [isPending, startTransition] = useTransition()
+  const [accounts, setAccounts] = useAccounts()
   const [account, setAccount] = useState<Partial<Account>>({
-    amount: "" as unknown as number,
+    balance: "" as unknown as number,
     digits: "" as unknown as number,
     limit: "" as unknown as number,
-    name: "",
+    title: "",
     notes: "",
+    type: "" as AccountType,
   })
   const [setLimit, setSetLimit] = useState(false)
 
   async function createAccountHandle(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+
+    startTransition(async () => {
+      const newAccount = await createAccount(account)
+
+      setAccounts({
+        ...accounts,
+        list: [...accounts.list, newAccount],
+      })
+      console.log(accounts);
+    })
+
+    toast("Event has been created", {
+      description: "Sunday, December 03, 2023 at 9:00 AM",
+      action: {
+        label: "Done",
+        onClick: () => console.log("Done"),
+      },
+    })
   }
 
   return (
     <form onSubmit={createAccountHandle} className="flex flex-col gap-2">
       <div className="flex items-center justify-between gap-2">
         <input
-          value={account.amount}
+          value={account.balance}
+          inputMode="numeric"
+          type="number"
           onChange={(e) =>
             setAccount((dt) => ({
               ...dt,
-              amount: e.target.value as unknown as number,
+              balance: e.target.value as unknown as number,
             }))
           }
+          required
           className="w-full border-none bg-inherit text-center font-mono text-4xl font-bold outline-none"
           placeholder="0.00"
         />
@@ -47,6 +76,7 @@ export function NewAccountForm() {
                   limit: e.target.value as unknown as number,
                 }))
               }
+              required
               className="w-full border-none bg-inherit text-center font-mono text-4xl font-bold outline-none"
               placeholder="0.00"
             />
@@ -56,39 +86,57 @@ export function NewAccountForm() {
 
       <div className="flex items-center justify-between gap-2">
         <Input
-          value={account.name}
+          value={account.title}
+          required
           onChange={(e) =>
             setAccount((dt) => ({
               ...dt,
-              name: e.target.value,
+              title: e.target.value,
             }))
           }
-          placeholder="Account name"
+          placeholder="Account title"
           className="font-bold"
         />
         <Input
           value={account.digits}
+          required
           onChange={(e) =>
             setAccount((dt) => ({
               ...dt,
               digits: e.target.value as unknown as number,
             }))
           }
+          type="number"
+          inputMode="numeric"
           placeholder="Last 4 digits"
           className="font-bold"
         />
       </div>
+
+      <Select
+          onValueChange={(value) => setAccount((dt) => ({ ...dt, type: value as AccountType }))}
+          defaultValue={account.type}
+        >
+          <SelectTrigger className="w-full">
+            <SelectValue placeholder="Choose a type..." />
+          </SelectTrigger>
+          <SelectContent>
+          <SelectItem value="depository">Depository</SelectItem>
+            <SelectItem value="credit_card">Credit card</SelectItem>
+            <SelectItem value="savings">Savings</SelectItem>
+            </SelectContent>
+        </Select>
       <Textarea
         value={account.notes}
         onChange={(e) =>
           setAccount((dt) => ({
             ...dt,
-            comments: e.target.value,
+            notes: e.target.value,
           }))
         }
         placeholder="Comments..."
         rows={3}
-        className="resize-none font-bold"
+        className="resize-none"
       />
 
       <div className="my-3 flex items-center space-x-2">
@@ -105,8 +153,8 @@ export function NewAccountForm() {
         </label>
       </div>
 
-      <Button>
-        <Download />
+      <Button type="submit" disabled={isPending}>
+        {isPending ? <Spinner /> : <Download />}
         Save
       </Button>
     </form>

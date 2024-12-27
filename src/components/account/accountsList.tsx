@@ -3,7 +3,6 @@
 import { useAccounts } from "@/hooks/useAccounts"
 import { ScrollArea } from "../ui/scroll-area"
 import { Input } from "../ui/input"
-// import { AccountPreview } from "./accountPreview"
 import { Account } from "budio"
 import { useEffect } from "react"
 import { Search } from "lucide-react"
@@ -41,6 +40,11 @@ export function AccountsList({ initialAccounts }: Props) {
       </div>
 
       <div className="flex-1">
+        {accounts.list.length === 0 ? (
+          <div className="flex items-center justify-center h-[calc(100vh_-_124px)]">
+            <p className="text-muted-foreground">No accounts found</p>
+          </div>
+        ) : (
         <ScrollArea className="h-[calc(100vh_-_124px)] p-4 pb-0">
           <div className="flex flex-col gap-2">
             {accounts.list.map((account, i) => (
@@ -52,6 +56,7 @@ export function AccountsList({ initialAccounts }: Props) {
             ))}
           </div>
         </ScrollArea>
+        )}
       </div>
     </>
   )

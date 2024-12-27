@@ -1,4 +1,5 @@
 import { SidebarProvider } from "@/components/ui/sidebar"
+import { Toaster } from "@/components/ui/sonner"
 import { Provider } from "jotai"
 
 export function Providers({
@@ -9,6 +10,7 @@ export function Providers({
   return (
     <Provider>
       <SidebarProvider>{children}</SidebarProvider>
+      <Toaster />
     </Provider>
   )
 }
