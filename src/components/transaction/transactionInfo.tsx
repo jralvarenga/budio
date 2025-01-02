@@ -10,6 +10,11 @@ export function TransactionInfo() {
   const [transactions, setTransactions] = useTransactions()
   const { selected: transaction, selectedIndex } = transactions
 
+  if (transactions.selected === null) {
+    return <div className="w-full h-screen"></div>
+    
+  }
+
   function goTransactionUp() {
     setTransactions({
       ...transactions,
@@ -86,8 +91,8 @@ export function TransactionInfo() {
       <div className="flex flex-wrap gap-2 p-4">
         <Badge>Account name</Badge>
         {transaction &&
-          transaction.categories.length > 0 &&
-          transaction?.categories.map((category, i) => (
+          transaction.category.length > 0 &&
+          transaction?.category.map((category, i) => (
             <Badge
               key={`transaction_${transaction?.id}_categorie_${i}`}
               variant={"outline"}

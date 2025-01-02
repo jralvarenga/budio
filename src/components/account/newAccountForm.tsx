@@ -36,10 +36,9 @@ export function NewAccountForm() {
         ...accounts,
         list: [...accounts.list, newAccount],
       })
-      console.log(accounts);
     })
 
-    toast("Event has been created", {
+    toast("Account has been created", {
       description: "Sunday, December 03, 2023 at 9:00 AM",
       action: {
         label: "Done",

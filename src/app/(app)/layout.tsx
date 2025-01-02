@@ -1,3 +1,4 @@
+import { getUserAccounts } from "@/actions/accounts"
 import { AppSidebar } from "@/components/appSidebar"
 import { NewTransaction } from "@/components/transaction/newTransaction"
 import { Button } from "@/components/ui/button"
@@ -18,8 +19,10 @@ export default async function RootLayout({
     return redirect("/login")
   }
 
+  const accounts = await getUserAccounts()
+
   return (
-    <Providers>
+    <Providers accounts={accounts}>
       <AuthWrapper currentUser={user}>
         <AppSidebar />
         <div className="flex-1 space-y-4">{children}</div>

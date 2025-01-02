@@ -12,6 +12,7 @@ interface Props {
 
 export function TransactionPreview({ transaction, index }: Props) {
   const [transactions, setTransactions] = useTransactions()
+  console.log(transaction)
 
   return (
     <button
@@ -51,7 +52,7 @@ export function TransactionPreview({ transaction, index }: Props) {
         </div>
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap gap-1">
-            {transaction.categories.map((category, i) => (
+            {transaction.category.map((category, i) => (
               <Badge key={`cateogry_transaction_preview_${i}`} className="text-xs text-muted-foreground" variant={"outline"}>
                 {category}
               </Badge>

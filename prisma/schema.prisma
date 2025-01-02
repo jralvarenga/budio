@@ -31,7 +31,7 @@ model Account {
 model Transaction {
   id        Int      @id @default(autoincrement())
   created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  updated_at DateTime? @updatedAt
   title     String
   notes     String?
   amount    Float
@@ -39,7 +39,7 @@ model Transaction {
   user_id    String
   recurrent Boolean  @default(false)
   location  Json?
-  time      DateTime
+  timestamp      DateTime
   account   Account  @relation(fields: [account_id], references: [id])
   account_id Int
 }

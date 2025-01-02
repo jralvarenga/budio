@@ -7,7 +7,7 @@ declare module "budio" {
     notes?: string
     amount: number
     account_id: string
-    categories: Categorie[]
+    category: Categorie[]
     recurrent?: boolean
     location?: {
       lat: number

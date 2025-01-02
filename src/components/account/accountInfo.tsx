@@ -20,18 +20,9 @@ export function AccountInfo() {
   const accountTransactions = transactions.list.filter((val) => val.account_id === account?.id)
 
 
-  if (accounts.list.length === 0) {
+  if (accounts.list.length === 0 || accounts.selected === null) {
     return (
-      <div className="w-full h-full flex gap-2 flex-col items-center justify-center">
-        <h1 className="font-bold">No accounts</h1>
-        <p className="text-muted-foreground">You don&apos;t have any accounts yet.</p>
-        <NewAccount
-          trigger={
-            <Button>
-              Create New Account
-            </Button>
-          }
-        />
+      <div className="w-full">
       </div>
     )
   }

@@ -7,12 +7,16 @@ import { TransactionPreview } from "./transactionPreview"
 import { Transaction } from "budio"
 import { useEffect } from "react"
 import { Search } from "lucide-react"
+import { NoTransactions } from "./noTransactions"
+import { useAccounts } from "@/hooks/useAccounts"
+import { NoAccounts } from "../account/noAccounts"
 
 interface Props {
   initialTransactions: Transaction[]
 }
 
 export function TransactionsList({ initialTransactions }: Props) {
+  const [accounts] = useAccounts()
   const [transactions, setTransactions] = useTransactions()
 
   useEffect(() => {
@@ -40,17 +44,25 @@ export function TransactionsList({ initialTransactions }: Props) {
       </div>
 
       <div className="flex-1">
-        <ScrollArea className="h-[calc(100vh_-_124px)] p-4 pb-0">
-          <div className="flex flex-col gap-2">
-            {transactions.list.map((transaction, i) => (
-              <TransactionPreview
-                transaction={transaction}
-                index={i}
-                key={`transaction_st_${i}`}
-              />
-            ))}
-          </div>
-        </ScrollArea>
+        {accounts.list.length === 0 ? (
+          <NoAccounts />
+        ) : 
+          transactions.list.length === 0 ? (
+            <NoTransactions />
+          ) : (
+            <ScrollArea className="h-[calc(100vh_-_124px)] p-4 pb-0">
+              <div className="flex flex-col gap-2">
+                {transactions.list.map((transaction, i) => (
+                  <TransactionPreview
+                    transaction={transaction}
+                    index={i}
+                    key={`transaction_st_${i}`}
+                  />
+                ))}
+              </div>
+            </ScrollArea>
+          )
+        }
       </div>
     </>
   )

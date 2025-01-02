@@ -2,14 +2,16 @@ import { Header } from "@/components/header"
 import { TransactionsList } from "@/components//transaction/transactionsList"
 import { Transaction } from "budio"
 import { TransactionInfo } from "@/components/transaction/transactionInfo"
-import { TRANSACTIONS_LIST } from "@/constants/mocks/transactions"
+import { getUserTransactions } from "@/actions/transactions"
 
 async function getData(): Promise<Transaction[]> {
-  return TRANSACTIONS_LIST
+  return getUserTransactions()
 }
 
 export default async function TransactionsPage() {
   const transactions = await getData()
+  console.log(transactions);
+  
 
   return (
     <div className="flex">
