@@ -1,13 +1,13 @@
 "use server"
 
 import { createClient } from "@/supabase/server"
-import { Transaction, TransactionWithAccount } from "budio"
+import { Transaction } from "budio"
 
 /**
  * get all transactions for the current user
  * @returns array of transactions
  */
-export async function getUserTransactions(): Promise<TransactionWithAccount[]> {
+export async function getUserTransactions(): Promise<Transaction[]> {
   const supabase = await createClient()
   const {
     data: { user },
@@ -23,7 +23,7 @@ export async function getUserTransactions(): Promise<TransactionWithAccount[]> {
     throw new Error(`Error fetching transactions: ${error.message}`)
   }
 
-  return transaction as TransactionWithAccount[]
+  return transaction as Transaction[]
 }
 
 /**

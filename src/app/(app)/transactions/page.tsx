@@ -1,10 +1,10 @@
 import { Header } from "@/components/header"
 import { TransactionsList } from "@/components//transaction/transactionsList"
-import { TransactionWithAccount } from "budio"
+import { Transaction } from "budio"
 import { TransactionInfo } from "@/components/transaction/transactionInfo"
 import { getUserTransactions } from "@/actions/transactions"
 
-async function getData(): Promise<TransactionWithAccount[]> {
+async function getData(): Promise<Transaction[]> {
   return getUserTransactions()
 }
 

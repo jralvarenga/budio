@@ -1,12 +1,12 @@
 import { useTransactions } from "@/hooks/useTransactions"
 import { cn } from "@/lib/utils"
-import { TransactionWithAccount } from "budio"
+import { Transaction } from "budio"
 import dayjs from "dayjs"
 import { IterationCcw } from "lucide-react"
 import { Badge } from "../ui/badge"
 
 interface Props {
-  transaction: TransactionWithAccount
+  transaction: Transaction
   index: number
 }
 

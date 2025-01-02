@@ -4,7 +4,7 @@ import { useTransactions } from "@/hooks/useTransactions"
 import { ScrollArea } from "../ui/scroll-area"
 import { Input } from "../ui/input"
 import { TransactionPreview } from "./transactionPreview"
-import { TransactionWithAccount } from "budio"
+import { Transaction } from "budio"
 import { useEffect } from "react"
 import { Search } from "lucide-react"
 import { NoTransactions } from "./noTransactions"
@@ -12,7 +12,7 @@ import { useAccounts } from "@/hooks/useAccounts"
 import { NoAccounts } from "../account/noAccounts"
 
 interface Props {
-  initialTransactions: TransactionWithAccount[]
+  initialTransactions: Transaction[]
 }
 
 export function TransactionsList({ initialTransactions }: Props) {

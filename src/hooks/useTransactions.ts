@@ -1,9 +1,9 @@
 import { atom, useAtom } from "jotai"
-import { TransactionWithAccount } from "budio"
+import { Transaction } from "budio"
 
 type Config = {
-  selected: TransactionWithAccount | null
-  list: TransactionWithAccount[]
+  selected: Transaction | null
+  list: Transaction[]
   selectedIndex: number | null
 }
 
