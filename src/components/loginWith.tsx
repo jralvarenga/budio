@@ -15,10 +15,13 @@ export function LoginWith() {
         </div>
       </div>
 
-      <form action={async () => {
-        'use server'
-        await loginWithProvider('google')
-      }} className="w-full">
+      <form
+        action={async () => {
+          "use server"
+          await loginWithProvider("google")
+        }}
+        className="w-full"
+      >
         <Button variant="outline" type="submit" className="w-full">
           Google
         </Button>

@@ -37,12 +37,7 @@ export function AccountPreview({ account, index }: Props) {
             )}
           >
             ${account.balance.toFixed(2)}
-            {account.limit && (
-              <span>
-                {" "}
-                / ${account.limit.toFixed(2)}
-              </span>
-            )}
+            {account.limit && <span> / ${account.limit.toFixed(2)}</span>}
           </div>
         </div>
       </div>

@@ -9,10 +9,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export function Providers({
-  children,
-  accounts
-}: Readonly<Props>) {
+export function Providers({ children, accounts }: Readonly<Props>) {
   return (
     <Provider>
       <StateWrapper accounts={accounts}>

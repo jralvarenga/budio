@@ -10,7 +10,13 @@ import { Download } from "lucide-react"
 import { toast } from "sonner"
 import { createAccount } from "@/actions/accounts"
 import { Spinner } from "../spinner"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select"
 import { useAccounts } from "@/hooks/useAccounts"
 
 export function NewAccountForm() {
@@ -113,18 +119,20 @@ export function NewAccountForm() {
       </div>
 
       <Select
-          onValueChange={(value) => setAccount((dt) => ({ ...dt, type: value as AccountType }))}
-          defaultValue={account.type}
-        >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Choose a type..." />
-          </SelectTrigger>
-          <SelectContent>
+        onValueChange={(value) =>
+          setAccount((dt) => ({ ...dt, type: value as AccountType }))
+        }
+        defaultValue={account.type}
+      >
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="Choose a type..." />
+        </SelectTrigger>
+        <SelectContent>
           <SelectItem value="depository">Depository</SelectItem>
-            <SelectItem value="credit_card">Credit card</SelectItem>
-            <SelectItem value="savings">Savings</SelectItem>
-            </SelectContent>
-        </Select>
+          <SelectItem value="credit_card">Credit card</SelectItem>
+          <SelectItem value="savings">Savings</SelectItem>
+        </SelectContent>
+      </Select>
       <Textarea
         value={account.notes}
         onChange={(e) =>

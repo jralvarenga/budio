@@ -1,4 +1,4 @@
-import { Account } from "budio";
+import { Account } from "budio"
 
 export const ACCOUNTS: Account[] = [
   {
@@ -8,7 +8,7 @@ export const ACCOUNTS: Account[] = [
     id: "de2ig8e27d23cwdbi",
     limit: 1500,
     name: "Credit Name 1",
-    type: 'credit_card'
+    type: "credit_card",
   },
   {
     amount: 2000,
@@ -17,7 +17,7 @@ export const ACCOUNTS: Account[] = [
     id: "wuecwy8cwnouce",
     limit: 2500,
     name: "Credit Name 1",
-    type: 'credit_card'
+    type: "credit_card",
   },
   {
     amount: 1000,
@@ -25,7 +25,7 @@ export const ACCOUNTS: Account[] = [
     created_at: new Date(),
     id: "de2ig8e27d23y9x1398",
     name: "Savings Name 1",
-    type: 'savings'
+    type: "savings",
   },
   {
     amount: 2000,
@@ -34,7 +34,7 @@ export const ACCOUNTS: Account[] = [
     created_at: new Date(),
     limit: 2500,
     name: "Savings Name 1",
-    type: 'savings'
+    type: "savings",
   },
   {
     amount: 1000,
@@ -42,7 +42,7 @@ export const ACCOUNTS: Account[] = [
     created_at: new Date(),
     id: "de2ig8e27d23xw1inop",
     name: "Depo Name 1",
-    type: 'depository'
+    type: "depository",
   },
   {
     amount: 2000,
@@ -50,7 +50,7 @@ export const ACCOUNTS: Account[] = [
     created_at: new Date(),
     id: "wuecwy8xw10i10",
     name: "Depo Name 1",
-    type: 'depository'
+    type: "depository",
   },
 ]
 

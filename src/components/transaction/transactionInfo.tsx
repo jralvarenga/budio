@@ -1,7 +1,13 @@
 "use client"
 
 import { useTransactions } from "@/hooks/useTransactions"
-import { ChevronDown, ChevronUp, IterationCcw, Navigation, Trash } from "lucide-react"
+import {
+  ChevronDown,
+  ChevronUp,
+  IterationCcw,
+  Navigation,
+  Trash,
+} from "lucide-react"
 import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
 import dayjs from "dayjs"
@@ -11,17 +17,14 @@ export function TransactionInfo() {
   const { selected: transaction, selectedIndex } = transactions
 
   if (transactions.selected === null) {
-    return <div className="w-full h-screen"></div>
-    
+    return <div className="h-screen w-full"></div>
   }
 
   function goTransactionUp() {
     setTransactions({
       ...transactions,
       selected:
-        transactions.list[
-          selectedIndex! - 1 <= 0 ? 0 : selectedIndex! - 1
-        ],
+        transactions.list[selectedIndex! - 1 <= 0 ? 0 : selectedIndex! - 1],
       selectedIndex: selectedIndex! - 1 <= 0 ? 0 : selectedIndex! - 1,
     })
   }
@@ -46,16 +49,10 @@ export function TransactionInfo() {
     <div>
       <div className="flex items-center justify-between p-2 pb-0">
         <div>
-          <Button
-            variant={"ghost"}
-            onClick={goTransactionUp}
-          >
+          <Button variant={"ghost"} onClick={goTransactionUp}>
             <ChevronUp />
           </Button>
-          <Button
-            variant={"ghost"}
-            onClick={goTransactionDown}
-          >
+          <Button variant={"ghost"} onClick={goTransactionDown}>
             <ChevronDown />
           </Button>
         </div>
@@ -72,9 +69,9 @@ export function TransactionInfo() {
           <h4 className="text-2xl font-bold">
             ${transaction?.amount.toFixed(2)}
           </h4>
-          <div className="flex gap-1 items-center">
+          <div className="flex items-center gap-1">
             {transaction?.recurrent && (
-              <div className="w-5 h-5 flex items-center justify-center border rounded-md border-muted">
+              <div className="flex h-5 w-5 items-center justify-center rounded-md border border-muted">
                 <IterationCcw size={10} />
               </div>
             )}
@@ -85,11 +82,13 @@ export function TransactionInfo() {
             <span>See location, direccion</span>
           </button>
         </div>
-        <div>{dayjs(transaction?.timestamp).format('DD MMMM, YYYY')}</div>
+        <div>
+          <span className="text-xs text-muted-foreground">{dayjs(transaction?.timestamp).format("DD MMMM, YYYY")}</span>
+          </div>
       </div>
 
       <div className="flex flex-wrap gap-2 p-4">
-        <Badge>Account name</Badge>
+        <Badge className="cursor-pointer" >{transaction?.Account.title}</Badge>
         {transaction &&
           transaction.category.length > 0 &&
           transaction?.category.map((category, i) => (

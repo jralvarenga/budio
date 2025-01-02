@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { AppDialog } from "../appDialog";
-import { NewAccountForm } from "./newAccountForm";
+import { ReactNode } from "react"
+import { AppDialog } from "../appDialog"
+import { NewAccountForm } from "./newAccountForm"
 
 interface Props {
   trigger: ReactNode
@@ -12,7 +12,7 @@ export function NewAccount({ trigger }: Props) {
       title="Add Account"
       content={<NewAccountForm />}
       trigger={trigger}
-      description="New account to save your transactions"  
+      description="New account to save your transactions"
     />
   )
 }

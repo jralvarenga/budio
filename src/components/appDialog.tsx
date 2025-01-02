@@ -46,7 +46,9 @@ export function AppDialog({ title, trigger, description, content }: Props) {
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>{title}</DialogTitle>
-            {description && <DialogDescription>{description}</DialogDescription>}
+            {description && (
+              <DialogDescription>{description}</DialogDescription>
+            )}
           </DialogHeader>
 
           {content}
@@ -66,9 +68,7 @@ export function AppDialog({ title, trigger, description, content }: Props) {
           {description && <DrawerDescription>{description}</DrawerDescription>}
         </DrawerHeader>
 
-        <div className="p-4">
-          {content}
-        </div>
+        <div className="p-4">{content}</div>
 
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>

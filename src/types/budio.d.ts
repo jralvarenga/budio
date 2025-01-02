@@ -32,4 +32,6 @@ declare module "budio" {
     created_at: Date
     updated_at?: Date
   }
+
+  export type TransactionWithAccount = Transaction & { Account: Partial<Account> }
 }

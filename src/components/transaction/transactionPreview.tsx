@@ -1,18 +1,17 @@
 import { useTransactions } from "@/hooks/useTransactions"
 import { cn } from "@/lib/utils"
-import { Transaction } from "budio"
+import { TransactionWithAccount } from "budio"
 import dayjs from "dayjs"
 import { IterationCcw } from "lucide-react"
 import { Badge } from "../ui/badge"
 
 interface Props {
-  transaction: Transaction
+  transaction: TransactionWithAccount
   index: number
 }
 
 export function TransactionPreview({ transaction, index }: Props) {
   const [transactions, setTransactions] = useTransactions()
-  console.log(transaction)
 
   return (
     <button
@@ -31,9 +30,9 @@ export function TransactionPreview({ transaction, index }: Props) {
     >
       <div className="flex w-full flex-col gap-1">
         <div className="transactions-center flex">
-          <div className="items-center flex gap-2">
+          <div className="flex items-center gap-2">
             {transaction.recurrent && (
-              <div className="p-1 border rounded-md border-muted">
+              <div className="rounded-md border border-muted p-1">
                 <IterationCcw size={10} />
               </div>
             )}
@@ -53,12 +52,18 @@ export function TransactionPreview({ transaction, index }: Props) {
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap gap-1">
             {transaction.category.map((category, i) => (
-              <Badge key={`cateogry_transaction_preview_${i}`} className="text-xs text-muted-foreground" variant={"outline"}>
+              <Badge
+                key={`cateogry_transaction_preview_${i}`}
+                className="text-xs text-muted-foreground"
+                variant={"outline"}
+              >
                 {category}
               </Badge>
             ))}
           </div>
-          <div className="text-xs font-medium">{dayjs(transaction.timestamp).format('DD MMMM, YYYY')}</div>
+          <div className="text-xs font-medium">
+            {dayjs(transaction.timestamp).format("DD MMMM, YYYY")}
+          </div>
         </div>
       </div>
       {/* <div className="line-clamp-2 text-xs text-muted-foreground">

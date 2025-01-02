@@ -40,12 +40,12 @@ export function NewTransactionForm() {
     try {
       startTransition(async () => {
         const newTransaction = await createTransaction(transaction)
-      
+
         setTransactions({
-            ...transactions,
-            list: [...transactions.list, newTransaction],
-          })
+          ...transactions,
+          list: [...transactions.list, newTransaction],
         })
+      })
 
       toast("Transaction has been created", {
         description: "Sunday, December 03, 2023 at 9:00 AM",
@@ -107,7 +107,9 @@ export function NewTransactionForm() {
         </Select>
         <Select
           required
-          onValueChange={(value) => setTransaction((dt) => ({ ...dt, account_id: value }))}
+          onValueChange={(value) =>
+            setTransaction((dt) => ({ ...dt, account_id: value }))
+          }
           defaultValue={transaction.account_id}
         >
           <SelectTrigger className="w-full">
@@ -115,7 +117,10 @@ export function NewTransactionForm() {
           </SelectTrigger>
           <SelectContent>
             {accounts.list.map((account) => (
-              <SelectItem key={`new_transaction_account_${account.id}`} value={account.id.toString()}>
+              <SelectItem
+                key={`new_transaction_account_${account.id}`}
+                value={account.id.toString()}
+              >
                 {account.title}
               </SelectItem>
             ))}
@@ -155,7 +160,9 @@ export function NewTransactionForm() {
       <div className="my-3 flex items-center space-x-2">
         <Checkbox
           id="new_transaction_recurrent"
-          onClick={() => setTransaction((dt) => ({ ...dt, recurrent: !dt.recurrent }))}
+          onClick={() =>
+            setTransaction((dt) => ({ ...dt, recurrent: !dt.recurrent }))
+          }
           checked={transaction.recurrent}
         />
         <label

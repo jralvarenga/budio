@@ -1,5 +1,5 @@
-import { Transaction } from "budio";
-import { Badge } from "../ui/badge";
+import { Transaction } from "budio"
+import { Badge } from "../ui/badge"
 
 interface Props {
   transaction: Transaction
@@ -7,15 +7,17 @@ interface Props {
 
 export function TransactionRow({ transaction }: Props) {
   return (
-    <div className="w-full hover:bg-muted duration-150 flex items-center justify-between p-2 border border-muted rounded-lg">
+    <div className="flex w-full items-center justify-between rounded-lg border border-muted p-2 duration-150 hover:bg-muted">
       <div className="flex items-center gap-2">
-        <h4 className="font-bold text-sm">{transaction.title}</h4>
-        {transaction.categories.map((category, i) => (
-          <Badge variant={"outline"} key={`category_transaction_${i}`}>{category}</Badge>
+        <h4 className="text-sm font-bold">{transaction.title}</h4>
+        {transaction.category.map((category, i) => (
+          <Badge variant={"outline"} key={`category_transaction_${i}`}>
+            {category}
+          </Badge>
         ))}
       </div>
 
-      <h4 className="font-bold text-sm">${transaction.amount.toFixed(2)}</h4>
+      <h4 className="text-sm font-bold">${transaction.amount.toFixed(2)}</h4>
     </div>
   )
 }

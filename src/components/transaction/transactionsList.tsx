@@ -4,7 +4,7 @@ import { useTransactions } from "@/hooks/useTransactions"
 import { ScrollArea } from "../ui/scroll-area"
 import { Input } from "../ui/input"
 import { TransactionPreview } from "./transactionPreview"
-import { Transaction } from "budio"
+import { TransactionWithAccount } from "budio"
 import { useEffect } from "react"
 import { Search } from "lucide-react"
 import { NoTransactions } from "./noTransactions"
@@ -12,7 +12,7 @@ import { useAccounts } from "@/hooks/useAccounts"
 import { NoAccounts } from "../account/noAccounts"
 
 interface Props {
-  initialTransactions: Transaction[]
+  initialTransactions: TransactionWithAccount[]
 }
 
 export function TransactionsList({ initialTransactions }: Props) {
@@ -25,9 +25,13 @@ export function TransactionsList({ initialTransactions }: Props) {
         ...transactions,
         list: initialTransactions,
         selected:
-          initialTransactions.length > 0 ? 
-          transactions.selected === null ? initialTransactions[0] : transactions.selected : null,
-        selectedIndex: transactions.selectedIndex === null ? 0 : transactions.selectedIndex,
+          initialTransactions.length > 0
+            ? transactions.selected === null
+              ? initialTransactions[0]
+              : transactions.selected
+            : null,
+        selectedIndex:
+          transactions.selectedIndex === null ? 0 : transactions.selectedIndex,
       })
     }
   }, [initialTransactions])
@@ -46,23 +50,21 @@ export function TransactionsList({ initialTransactions }: Props) {
       <div className="flex-1">
         {accounts.list.length === 0 ? (
           <NoAccounts />
-        ) : 
-          transactions.list.length === 0 ? (
-            <NoTransactions />
-          ) : (
-            <ScrollArea className="h-[calc(100vh_-_124px)] p-4 pb-0">
-              <div className="flex flex-col gap-2">
-                {transactions.list.map((transaction, i) => (
-                  <TransactionPreview
-                    transaction={transaction}
-                    index={i}
-                    key={`transaction_st_${i}`}
-                  />
-                ))}
-              </div>
-            </ScrollArea>
-          )
-        }
+        ) : transactions.list.length === 0 ? (
+          <NoTransactions />
+        ) : (
+          <ScrollArea className="h-[calc(100vh_-_124px)] p-4 pb-0">
+            <div className="flex flex-col gap-2">
+              {transactions.list.map((transaction, i) => (
+                <TransactionPreview
+                  transaction={transaction}
+                  index={i}
+                  key={`transaction_st_${i}`}
+                />
+              ))}
+            </div>
+          </ScrollArea>
+        )}
       </div>
     </>
   )

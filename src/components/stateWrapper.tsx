@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { useAccounts } from "@/hooks/useAccounts"
 import { Account } from "budio"
@@ -21,9 +21,13 @@ export function StateWrapper({ children, accounts: initAccounts }: Props) {
         ...accounts,
         list: initAccounts,
         selected:
-          initAccounts.length > 0 ? 
-          accounts.selected === null ? initAccounts[0] : accounts.selected : null,
-        selectedIndex: accounts.selectedIndex === null ? 0 : accounts.selectedIndex,
+          initAccounts.length > 0
+            ? accounts.selected === null
+              ? initAccounts[0]
+              : accounts.selected
+            : null,
+        selectedIndex:
+          accounts.selectedIndex === null ? 0 : accounts.selectedIndex,
       })
     }
   }, [initAccounts])

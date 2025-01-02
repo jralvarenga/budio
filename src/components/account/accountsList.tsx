@@ -25,17 +25,17 @@ export function AccountsList() {
         {accounts.list.length === 0 ? (
           <NoAccounts />
         ) : (
-        <ScrollArea className="h-[calc(100vh_-_124px)] p-4 pb-0">
-          <div className="flex flex-col gap-2">
-            {accounts.list.map((account, i) => (
-              <AccountPreview
-                account={account}
-                index={i}
-                key={`account_st_${i}`}
-              />
-            ))}
-          </div>
-        </ScrollArea>
+          <ScrollArea className="h-[calc(100vh_-_124px)] p-4 pb-0">
+            <div className="flex flex-col gap-2">
+              {accounts.list.map((account, i) => (
+                <AccountPreview
+                  account={account}
+                  index={i}
+                  key={`account_st_${i}`}
+                />
+              ))}
+            </div>
+          </ScrollArea>
         )}
       </div>
     </>

@@ -1,5 +1,5 @@
-import { Transaction } from "budio";
-import { ACCOUNT } from "./accounts";
+import { Transaction } from "budio"
+import { ACCOUNT } from "./accounts"
 
 export const TRANSACTIONS_LIST: Transaction[] = [
   {
@@ -10,7 +10,7 @@ export const TRANSACTIONS_LIST: Transaction[] = [
     created_at: new Date(),
     timestamp: new Date(),
     title: "Medicinas",
-    notes: "Medicinas que compre para cuando estaba enfermo"
+    notes: "Medicinas que compre para cuando estaba enfermo",
   },
   {
     id: "vhwouhuovw212ww",
@@ -23,8 +23,8 @@ export const TRANSACTIONS_LIST: Transaction[] = [
     location: {
       lat: 9.18902801,
       lon: -101.190212,
-      direction: 'El pomodoro, Santa Tecla'
-    }
+      direction: "El pomodoro, Santa Tecla",
+    },
   },
   {
     id: "cwicrwibncr21ssqq",
@@ -43,8 +43,9 @@ export const TRANSACTIONS_LIST: Transaction[] = [
     created_at: new Date(),
     timestamp: new Date(),
     title: "Netflix",
-    recurrent: true
-  },{
+    recurrent: true,
+  },
+  {
     id: "728ed52fe2swsw",
     amount: 100,
     account_id: ACCOUNT.id,
@@ -52,7 +53,7 @@ export const TRANSACTIONS_LIST: Transaction[] = [
     created_at: new Date(),
     timestamp: new Date(),
     title: "Medicinas",
-    notes: "Medicinas que compre para cuando estaba enfermo"
+    notes: "Medicinas que compre para cuando estaba enfermo",
   },
   {
     id: "vhwouhuovwcdwdcw",
@@ -65,8 +66,8 @@ export const TRANSACTIONS_LIST: Transaction[] = [
     location: {
       lat: 9.18902801,
       lon: -101.190212,
-      direction: 'El pomodoro, Santa Tecla'
-    }
+      direction: "El pomodoro, Santa Tecla",
+    },
   },
   {
     id: "cwicrwibncr",
@@ -85,8 +86,9 @@ export const TRANSACTIONS_LIST: Transaction[] = [
     created_at: new Date(),
     timestamp: new Date(),
     title: "Netflix",
-    recurrent: true
-  },{
+    recurrent: true,
+  },
+  {
     id: "728ed52f",
     amount: 100,
     account_id: ACCOUNT.id,
@@ -94,7 +96,7 @@ export const TRANSACTIONS_LIST: Transaction[] = [
     created_at: new Date(),
     timestamp: new Date(),
     title: "Medicinas",
-    notes: "Medicinas que compre para cuando estaba enfermo"
+    notes: "Medicinas que compre para cuando estaba enfermo",
   },
   {
     id: "vhwouhuovw",
@@ -107,8 +109,8 @@ export const TRANSACTIONS_LIST: Transaction[] = [
     location: {
       lat: 9.18902801,
       lon: -101.190212,
-      direction: 'El pomodoro, Santa Tecla'
-    }
+      direction: "El pomodoro, Santa Tecla",
+    },
   },
   {
     id: "cwicrwibncr",
@@ -127,8 +129,8 @@ export const TRANSACTIONS_LIST: Transaction[] = [
     created_at: new Date(),
     timestamp: new Date(),
     title: "Netflix",
-    recurrent: true
-  }
+    recurrent: true,
+  },
 ]
 
 export const TRANSACTION = TRANSACTIONS_LIST[0]

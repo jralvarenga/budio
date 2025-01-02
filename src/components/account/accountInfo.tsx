@@ -17,23 +17,18 @@ export function AccountInfo() {
   const { selected: account, selectedIndex } = accounts
 
   // fetch them instead of filtering
-  const accountTransactions = transactions.list.filter((val) => val.account_id === account?.id)
-
+  const accountTransactions = transactions.list.filter(
+    (val) => val.account_id === account?.id,
+  )
 
   if (accounts.list.length === 0 || accounts.selected === null) {
-    return (
-      <div className="w-full">
-      </div>
-    )
+    return <div className="w-full"></div>
   }
 
   function goAccountUp() {
     setAccounts({
       ...accounts,
-      selected:
-        accounts.list[
-          selectedIndex! - 1 <= 0 ? 0 : selectedIndex! - 1
-        ],
+      selected: accounts.list[selectedIndex! - 1 <= 0 ? 0 : selectedIndex! - 1],
       selectedIndex: selectedIndex! - 1 <= 0 ? 0 : selectedIndex! - 1,
     })
   }
@@ -59,25 +54,21 @@ export function AccountInfo() {
       ...transactions,
       selected: transaction,
       // @ts-expect-error Error is expected for this of filter
-      selectedIndex: transactions.list.map((dt) => dt.id).indexOf((id: string) => id === transaction.id)
+      selectedIndex: transactions.list
+        .map((dt) => dt.id)
+        .indexOf((id: string) => id === transaction.id),
     })
-    router.push('/transactions')
+    router.push("/transactions")
   }
 
   return (
     <div>
       <div className="flex items-center justify-between p-2 pb-0">
         <div>
-          <Button
-            variant={"ghost"}
-            onClick={goAccountUp}
-          >
+          <Button variant={"ghost"} onClick={goAccountUp}>
             <ChevronUp />
           </Button>
-          <Button
-            variant={"ghost"}
-            onClick={goAccountDown}
-          >
+          <Button variant={"ghost"} onClick={goAccountDown}>
             <ChevronDown />
           </Button>
         </div>
@@ -89,21 +80,24 @@ export function AccountInfo() {
         </div>
       </div>
 
-      <div className="flex items-start justify-between border-b border-muted p-4 pb-3 mb-3">
+      <div className="mb-3 flex items-start justify-between border-b border-muted p-4 pb-3">
         <div>
           <h4 className="text-2xl font-bold">
             ${account?.balance.toFixed(2)}
             {account?.limit && (
-              <span className="text-muted-foreground text-xs">
-                {" "}/ ${account?.limit.toFixed(2)}
+              <span className="text-xs text-muted-foreground">
+                {" "}
+                / ${account?.limit.toFixed(2)}
               </span>
             )}
           </h4>
-          <div className="flex gap-1 items-center">
+          <div className="flex items-center gap-1">
             <h6>{account?.title}</h6>
           </div>
         </div>
-        <Badge className="capitalize font-bold">{account?.type.replaceAll('_', ' ')}</Badge>
+        <Badge className="font-bold capitalize">
+          {account?.type.replaceAll("_", " ")}
+        </Badge>
       </div>
 
       {account?.notes && (
@@ -112,14 +106,13 @@ export function AccountInfo() {
         </div>
       )}
 
-      <div className="px-4 flex flex-col gap-2">
+      <div className="flex flex-col gap-2 px-4">
         {accountTransactions.map((transaction, i) => (
-          <button onClick={() => goToTransaction(transaction)}
+          <button
+            onClick={() => goToTransaction(transaction)}
             key={`account_${account?.id}_transaction_${i}`}
           >
-            <TransactionRow
-              transaction={transaction}
-            />
+            <TransactionRow transaction={transaction} />
           </button>
         ))}
       </div>

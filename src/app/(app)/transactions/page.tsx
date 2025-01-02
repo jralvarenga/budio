@@ -1,22 +1,20 @@
 import { Header } from "@/components/header"
 import { TransactionsList } from "@/components//transaction/transactionsList"
-import { Transaction } from "budio"
+import { TransactionWithAccount } from "budio"
 import { TransactionInfo } from "@/components/transaction/transactionInfo"
 import { getUserTransactions } from "@/actions/transactions"
 
-async function getData(): Promise<Transaction[]> {
+async function getData(): Promise<TransactionWithAccount[]> {
   return getUserTransactions()
 }
 
 export default async function TransactionsPage() {
   const transactions = await getData()
-  console.log(transactions);
-  
 
   return (
     <div className="flex">
-      <div className="flex flex-1 flex-col gap-3 ">
-        <div className="pt-4 px-4">
+      <div className="flex flex-1 flex-col gap-3">
+        <div className="px-4 pt-4">
           <Header title="Transactions" />
         </div>
 
