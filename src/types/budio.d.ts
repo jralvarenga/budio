@@ -1,7 +1,7 @@
 declare module "budio" {
-  import { Account as AccountModel, Transaction as TransactionModel } from "@prisma/client"
+  import { Account as AccountModel, Category as CategoryModel, Transaction as TransactionModel } from "@prisma/client"
 
-  export type Categorie = string
+  export type Category = CategoryModel
 
   export type AccountType = "credit_card" | "depository" | "savings"
 

@@ -23,7 +23,7 @@ export function RefillAccounts({ budget: defaultBudget }: Props) {
           {budget !== "" && <span className="text-5xl font-bold">$</span>}
           <input
             type="number"
-            className="border-none bg-inherit text-5xl font-bold outline-none"
+            className="border-none bg-inherit text-5xl max-w-48 font-bold outline-none"
             placeholder="$0.00"
             name="budget"
             id=""

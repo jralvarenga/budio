@@ -88,17 +88,17 @@ export function TransactionInfo() {
       </div>
 
       <div className="flex flex-wrap gap-2 p-4">
-        <Badge className="cursor-pointer" >{transaction?.Account.title}</Badge>
-        {transaction &&
-          transaction.category.length > 0 &&
-          transaction?.category.map((category, i) => (
+        <Badge className="cursor-pointer" >{transaction?.Account.name}</Badge>
+        {/* {transaction &&
+          transaction.categories.length > 0 &&
+          transaction?.categories.map((categories, i) => (
             <Badge
               key={`transaction_${transaction?.id}_categorie_${i}`}
               variant={"outline"}
             >
-              {category}
+              {categories}
             </Badge>
-          ))}
+          ))} */}
       </div>
 
       <p className="p-4">{transaction?.notes}</p>

@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils"
 import { Transaction } from "budio"
 import dayjs from "dayjs"
 import { IterationCcw } from "lucide-react"
-import { Badge } from "../ui/badge"
 
 interface Props {
   transaction: Transaction
@@ -51,7 +50,7 @@ export function TransactionPreview({ transaction, index }: Props) {
         </div>
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap gap-1">
-            {transaction.category.map((category, i) => (
+            {/* {transaction.categories.map((category, i) => (
               <Badge
                 key={`cateogry_transaction_preview_${i}`}
                 className="text-xs text-muted-foreground"
@@ -59,7 +58,7 @@ export function TransactionPreview({ transaction, index }: Props) {
               >
                 {category}
               </Badge>
-            ))}
+            ))} */}
           </div>
           <div className="text-xs font-medium">
             {dayjs(transaction.timestamp).format("DD MMMM, YYYY")}

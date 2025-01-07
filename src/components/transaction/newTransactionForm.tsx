@@ -18,32 +18,39 @@ import { useAccounts } from "@/hooks/useAccounts"
 import { createTransaction } from "@/actions/transactions"
 import { toast } from "sonner"
 import { useTransactions } from "@/hooks/useTransactions"
+import { useBudget } from "@/hooks/useBudget"
 
 export function NewTransactionForm() {
-  const [accounts] = useAccounts()
+  const [accounts, setAccounts] = useAccounts()
+  const [budget] = useBudget()
   const [isPending, startTransition] = useTransition()
   const [transactions, setTransactions] = useTransactions()
   const [transaction, setTransaction] = useState<Partial<Transaction>>({
     amount: "" as unknown as number,
-    category: [],
     title: "",
     recurrent: false,
     notes: "",
-    account_id: "",
+    account_id: "" as unknown as number,
   })
   const [selectedCategorie, setSelectedCategorie] = useState("")
 
   async function handleTransactionSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    transaction.category = [selectedCategorie]
 
     try {
       startTransition(async () => {
-        const newTransaction = await createTransaction(transaction)
+        const account = accounts.list.filter((acc) => acc.id === transaction.account_id)[0]
+        const { account: updatedAccount, transaction: newTransaction } = await createTransaction(transaction, account.balance)
 
         setTransactions({
           ...transactions,
           list: [...transactions.list, newTransaction],
+        })
+        setAccounts({
+          ...accounts,
+          list: accounts.list.map((acc) =>
+            acc.id === updatedAccount.id ? updatedAccount : acc
+          ),
         })
       })
 
@@ -99,18 +106,22 @@ export function NewTransactionForm() {
             <SelectValue placeholder="Choose a categorie..." />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="categorie1">Categorie 1</SelectItem>
-            <SelectItem value="categorie2">Categorie 2</SelectItem>
-            <SelectItem value="categorie3">Categorie 3</SelectItem>
-            <SelectItem value="categorie4">Categorie 4</SelectItem>
+            {budget.categories.map((categorie) => (
+              <SelectItem
+                key={`new_transaction_categorie_${categorie.id}`}
+                value={categorie.id.toString()}
+              >
+                {categorie.title}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
         <Select
           required
           onValueChange={(value) =>
-            setTransaction((dt) => ({ ...dt, account_id: value }))
+            setTransaction((dt) => ({ ...dt, account_id: +value }))
           }
-          defaultValue={transaction.account_id}
+          defaultValue={transaction.account_id?.toString()}
         >
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Choose an account..." />
@@ -121,7 +132,7 @@ export function NewTransactionForm() {
                 key={`new_transaction_account_${account.id}`}
                 value={account.id.toString()}
               >
-                {account.title}
+                {account.name}
               </SelectItem>
             ))}
             {/* <SelectGroup>
@@ -146,7 +157,7 @@ export function NewTransactionForm() {
         </Select>
       </div>
       <Textarea
-        value={transaction.notes}
+        value={transaction.notes!}
         onChange={(e) =>
           setTransaction((dt) => ({
             ...dt,

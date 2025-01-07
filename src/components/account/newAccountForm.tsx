@@ -26,7 +26,7 @@ export function NewAccountForm() {
     balance: "" as unknown as number,
     digits: "" as unknown as number,
     limit: "" as unknown as number,
-    title: "",
+    name: "",
     notes: "",
     type: "" as AccountType,
   })
@@ -74,7 +74,7 @@ export function NewAccountForm() {
           <>
             <span className="text-2xl">/</span>
             <input
-              value={account.limit}
+              value={account.limit!}
               onChange={(e) =>
                 setAccount((dt) => ({
                   ...dt,
@@ -91,15 +91,15 @@ export function NewAccountForm() {
 
       <div className="flex items-center justify-between gap-2">
         <Input
-          value={account.title}
+          value={account.name}
           required
           onChange={(e) =>
             setAccount((dt) => ({
               ...dt,
-              title: e.target.value,
+              name: e.target.value,
             }))
           }
-          placeholder="Account title"
+          placeholder="Account name"
           className="font-bold"
         />
         <Input
@@ -134,7 +134,7 @@ export function NewAccountForm() {
         </SelectContent>
       </Select>
       <Textarea
-        value={account.notes}
+        value={account.notes!}
         onChange={(e) =>
           setAccount((dt) => ({
             ...dt,

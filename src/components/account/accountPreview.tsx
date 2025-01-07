@@ -27,7 +27,7 @@ export function AccountPreview({ account, index }: Props) {
     >
       <div className="flex w-full flex-col gap-1">
         <div className="accounts-center flex">
-          <div className="font-semibold">{account.title}</div>
+          <div className="font-semibold">{account.name}</div>
           <div
             className={cn(
               "ml-auto font-bold",

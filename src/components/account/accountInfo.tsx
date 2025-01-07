@@ -8,7 +8,6 @@ import { useTransactions } from "@/hooks/useTransactions"
 import { TransactionRow } from "../transaction/transactionRow"
 import { Transaction } from "budio"
 import { useRouter } from "next/navigation"
-import { NewAccount } from "./newAccount"
 
 export function AccountInfo() {
   const router = useRouter()
@@ -53,10 +52,9 @@ export function AccountInfo() {
     setTransactions({
       ...transactions,
       selected: transaction,
-      // @ts-expect-error Error is expected for this of filter
       selectedIndex: transactions.list
         .map((dt) => dt.id)
-        .indexOf((id: string) => id === transaction.id),
+        .indexOf((id: number) => id === transaction.id),
     })
     router.push("/transactions")
   }
@@ -92,7 +90,7 @@ export function AccountInfo() {
             )}
           </h4>
           <div className="flex items-center gap-1">
-            <h6>{account?.title}</h6>
+            <h6>{account?.name}</h6>
           </div>
         </div>
         <Badge className="font-bold capitalize">

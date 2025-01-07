@@ -18,7 +18,7 @@ model Account {
   id        Int      @id @default(autoincrement())
   created_at DateTime @default(now())
   updated_at DateTime? @updatedAt 
-  title      String
+  name      String
   digits Int
   user_id    String
   balance   Float
@@ -35,11 +35,33 @@ model Transaction {
   title     String
   notes     String?
   amount    Float
-  category  String[]
   user_id    String
   recurrent Boolean  @default(false)
   location  Json?
   timestamp      DateTime
   account   Account  @relation(fields: [account_id], references: [id])
   account_id Int
+  category  Category @relation(fields: [category_id], references: [id])
+  category_id Int
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+  title     String
+  user_id    String?
+  budgets Budget[]
+  budgets_id Int[]
+  transactions Transaction[]
+}
+
+model Budget {
+  id        Int      @id @default(autoincrement())
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+  title     String
+  user_id    String
+  amount    Float
+  categories Category[]
 }

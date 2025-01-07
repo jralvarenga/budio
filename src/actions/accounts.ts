@@ -40,7 +40,7 @@ export async function createAccount(
   const { data, error } = await supabase
     .from("Account")
     .upsert({
-      title: account.title,
+      name: account.name,
       digits: +account.digits!,
       balance: +account.balance!,
       type: account.type,
@@ -54,7 +54,6 @@ export async function createAccount(
   if (error) {
     throw new Error(`Error inserting account: ${error.message}`)
   }
-  console.log(data)
 
   return data[0]
 }

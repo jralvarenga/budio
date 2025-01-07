@@ -1,4 +1,5 @@
 import { getUserAccounts } from "@/actions/accounts"
+import { getCategories } from "@/actions/budget"
 import { AppSidebar } from "@/components/appSidebar"
 import { NewTransaction } from "@/components/transaction/newTransaction"
 import { Button } from "@/components/ui/button"
@@ -23,9 +24,10 @@ export default async function RootLayout({
   }
 
   const accounts = await getUserAccounts()
+  const categories = await getCategories()
 
   return (
-    <Providers accounts={accounts}>
+    <Providers accounts={accounts} categories={categories}>
       <AuthWrapper currentUser={user}>
         <AppSidebar />
         <div className="flex-1 space-y-4">{children}</div>
