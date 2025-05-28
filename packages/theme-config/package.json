@@ -1,0 +1,16 @@
+{
+  "name": "@budio/theme-config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./postcss": "./postcss.config.js"
+  },
+  "devDependencies": {
+    "@budio/typescript-config": "workspace:*"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "postcss-simple-vars": "^7.0.1"
+  }
+}
