@@ -1,4 +1,4 @@
-import { Text, View } from "react-native"
+import { Text, View } from "@/components/ui"
 
 export default function HomeScreen() {
   return (

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./postcss": "./postcss.config.js"
+    "./postcss": "./postcss.config.js",
+    "./theme": "./theme.json"
   },
   "devDependencies": {
     "@budio/typescript-config": "workspace:*"
