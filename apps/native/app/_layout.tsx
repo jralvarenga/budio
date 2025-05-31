@@ -45,6 +45,10 @@ export default function RootLayout() {
       <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="add-transaction"
+          options={{ presentation: "modal", headerShown: false }}
+        />
       </Stack>
       <PortalHost />
     </ThemeProvider>
